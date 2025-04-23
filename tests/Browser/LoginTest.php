@@ -15,14 +15,13 @@ class LoginTest extends DuskTestCase
     public function testExample(): void
     {
         $this->browse(function (Browser $browser) {
-            $browser->visit('/')
-                    ->clickLink('Log in')
-                    ->assertSee('Email')
-                    ->assertSee('Password')
-                    ->type('email', 'admin@gmail.com')
-                    ->type('password', 'password')
-                    ->press('LOG IN');
-
+            $browser->visit('/') // Mengunjungi halaman web dengan route "/".
+                    ->clickLink('Log in') // Mengklik tautan dengan teks "Log in" pada halaman.
+                    ->assertSee('Email') // Memeriksa apakah teks "Email" terlihat di halaman.
+                    ->assertSee('Password') // Memeriksa apakah teks "Password" terlihat di halaman.
+                    ->type('email', 'admin@gmail.com') // Mengetik "admin@gmail.com" pada input field dengan nama atau id "email".
+                    ->type('password', 'password') // Mengetik "password" pada input field dengan nama atau id "password".
+                    ->press('LOG IN'); // Menekan tombol dengan teks "LOG IN" untuk mengirimkan form.
         });
     }
 }

@@ -16,16 +16,16 @@ class LogoutTest extends DuskTestCase
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
-                    ->clickLink('Log in')
-                    ->assertSee('Email')
-                    ->assertSee('Password')
-                    ->type('email', 'tes1@gmail.com')
-                    ->type('password', 'tes1')
-                    ->press('LOG IN')
+                    ->clickLink('Log in') // Mengklik tautan dengan teks "Log in" pada halaman.
+                    ->assertSee('Email') // Memeriksa apakah teks "Email" terlihat di halaman.
+                    ->assertSee('Password') // Memeriksa apakah teks "Password" terlihat di halaman.
+                    ->type('email', 'tes1@gmail.com') // Mengetik "tes1@gmail.com" pada input field dengan nama atau id "email".
+                    ->type('password', 'tes1') // Mengetik "tes1" pada input field dengan nama atau id "password".
+                    ->press('LOG IN') // Menekan tombol dengan teks "LOG IN" untuk mengirimkan form.
 
-                    ->click('#click-dropdown')
-                    ->waitFor('#click-dropdown')
-                    ->clickLink('Log Out');        
+                    ->click('#click-dropdown') // Mengklik elemen dengan id "click-dropdown", kemungkinan untuk membuka menu dropdown.
+                    ->waitFor('#click-dropdown') // Menunggu hingga elemen dengan id "click-dropdown" muncul atau tersedia di halaman.
+                    ->clickLink('Log Out'); // Mengklik tautan dengan teks "Log Out" untuk keluar dari akun.
         });
     }
 }
