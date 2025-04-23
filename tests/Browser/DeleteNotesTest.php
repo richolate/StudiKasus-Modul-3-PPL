@@ -6,16 +6,16 @@ use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Laravel\Dusk\Browser;
 use Tests\DuskTestCase;
 
-class EditNotesTest extends DuskTestCase
+class DeleteNotesTest extends DuskTestCase
 {
     /**
      * A Dusk test example.
-     * @group editnotes
+     * @group deletenotes
      */
     public function testExample(): void
     {
         $this->browse(function (Browser $browser) {
-            $browser->visit('/') 
+            $browser->visit('/')
                     ->clickLink('Log in')
                     ->assertPathIs('/login')
                     ->assertSee('Email')
@@ -27,15 +27,8 @@ class EditNotesTest extends DuskTestCase
                     ->assertPathIs('/dashboard')
                     ->pause(1000) 
                     ->clickLink('Notes')
-
                     ->assertPathIs('/notes')
-                    ->pause(500) 
-                    ->clickLink('Edit')
-                    ->assertSee('Title')
-                    ->assertSee('Description')
-                    ->type('title', 'Praktikum Modul Tigaaa')
-                    ->type('description', 'EZ tapi gw error mulu di php version huaaa')
-                    ->press('UPDATE');
+                    ->press('Delete');
         });
     }
 }
